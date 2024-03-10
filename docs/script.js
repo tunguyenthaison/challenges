@@ -1,15 +1,32 @@
 document.addEventListener('DOMContentLoaded', function() {
     const daysGrid = document.getElementById('days-grid');
-    const daysInMonth = 31; // for simplicity, let's assume 31 days in a month
+    const today = new Date();
+    const currentMonth = today.getMonth();
+    const currentYear = today.getFullYear();
+    const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
+    const lastDateOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
 
     // Load or initialize check-ins
     const checkIns = JSON.parse(localStorage.getItem('checkIns')) || {};
 
     function createDaysGrid() {
-        for (let i = 0; i < daysInMonth; i++) {
+        // Create empty squares for days of previous month
+        for (let i = 0; i < firstDayOfMonth; i++) {
             const day = document.createElement('div');
             day.classList.add('day');
-            day.setAttribute('data-day', i + 1);
+            daysGrid.appendChild(day);
+        }
+
+        // Create actual squares for current month
+        for (let i = 1; i <= lastDateOfMonth; i++) {
+            const day = document.createElement('div');
+            day.classList.add('day');
+            day.setAttribute('data-day', i);
+
+            // Mark the current day
+            if (i === today.getDate()) {
+                day.classList.add('current');
+            }
 
             // Event listener for check-ins
             day.addEventListener('click', function() {
@@ -23,29 +40,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function checkIn(dayIndex) {
-        checkIns[dayIndex] = (checkIns[dayIndex] || 0) + 1; // Increment the count of check-ins
+        checkIns[`${currentYear}-${currentMonth + 1}-${dayIndex}`] = true;
         localStorage.setItem('checkIns', JSON.stringify(checkIns));
         updateDaysGrid();
     }
 
     function updateDaysGrid() {
-        for (let i = 0; i < daysInMonth; i++) {
-            const day = daysGrid.children[i];
-            const checkInCount = checkIns[i + 1] || 0;
-            // Update the color based on the number of check-ins
-            if (checkInCount > 2) {
-                day.classList.add('dark');
-                day.classList.remove('medium', 'light');
-            } else if (checkInCount > 1) {
-                day.classList.add('medium');
-                day.classList.remove('light', 'dark');
-            } else if (checkInCount > 0) {
-                day.classList.add('light');
-                day.classList.remove('medium', 'dark');
-            } else {
-                day.classList.remove('light', 'medium', 'dark');
+        const days = daysGrid.getElementsByClassName('day');
+        Object.keys(checkIns).forEach(date => {
+            const [year, month, day] = date.split('-').map(num => parseInt(num, 10));
+            if (year === currentYear && month === currentMonth + 1) {
+                const dayElement = days[day + firstDayOfMonth - 1];
+                dayElement.classList.add('checked');
             }
-        }
+        });
     }
 
     createDaysGrid();

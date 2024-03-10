@@ -1,7 +1,7 @@
 # Reading challenges
 
 ## About
-This is a repo for 30 30-day challenges on many different tasks.
+This is a repo for 30-day challenges on many different tasks.
 
 ### `esthr`
 

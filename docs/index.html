@@ -1,60 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Check-in Habit Tracker</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-  }
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-    max-width: 700px;
-    margin: 20px auto;
-  }
-  .grid-item {
-    width: 20px;
-    height: 20px;
-    background-color: #ebedf0;
-    border-radius: 2px;
-  }
-  .contribution-0 { background-color: #ebedf0; }
-  .contribution-1 { background-color: #9be9a8; }
-  .contribution-2 { background-color: #40c463; }
-  .contribution-3 { background-color: #30a14e; }
-  .contribution-4 { background-color: #216e39; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check-In Habit Tracker</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div id="habit-tracker" class="grid-container">
-  <!-- Grid items added by JavaScript -->
-</div>
-
-<script>
-// Sample static data for the contributions.
-const contributions = [
-  { date: '2024-01-01', count: 1 },
-  { date: '2024-01-02', count: 2 },
-  // ... more data
-];
-
-function generateContributionElements(contributions) {
-  const container = document.getElementById('habit-tracker');
-  contributions.forEach(contribution => {
-    const element = document.createElement('div');
-    element.className = `grid-item contribution-${contribution.count}`;
-    container.appendChild(element);
-  });
-}
-
-// Generate the grid on page load.
-generateContributionElements(contributions);
-</script>
-
+    <h1>Check-In Habit Tracker</h1>
+    <div id="tracker"></div>
+    <button onclick="checkIn()">Check-In Today</button>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#tracker {
+  display: grid;
+  grid-template-columns: repeat(7, 20px);
+  gap: 5px;
+}
+
+.day {
+  width: 20px;
+  height: 20px;
+  background-color: #e0e0e0;
+}
+
+.checked {
+  background-color: #76a9fa;
+}

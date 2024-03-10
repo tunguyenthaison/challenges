@@ -31,7 +31,7 @@ Done?         |                    |                     |                   |  
 ### How to use:
 - Fill in `&#x2718;` for &#x2718; or just leaving empty <br>
   This means the task did not get done on that day.
-- Fill in `:heavy_check_mark:` for :heavy_check_mark: <br>
+- Fill in `:heavy_check_mark:` or `&#x2714;` (this is better) for :heavy_check_mark: <br>
   This means the task gets done on that day, moderately.
 - Fill in `:white_check_mark:` for :white_check_mark:<br>
   This means the task gets done on that day _super well_!

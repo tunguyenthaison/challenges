@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monthly Check-In Habit Tracker</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="tracker">
-        <div id="month">March 2024</div>
+    <div class="tracker-container">
+        <div id="month-year">March 2024</div>
         <div class="weekdays">
             <span>Sun</span>
             <span>Mon</span>
@@ -19,14 +19,22 @@
             <span>Sat</span>
         </div>
         <div id="days-grid"></div>
+        <div class="legend">
+            <span>Less</span>
+            <div class="color-box light"></div>
+            <div class="color-box medium"></div>
+            <div class="color-box dark"></div>
+            <span>More</span>
+        </div>
     </div>
-    <div class="legend">
-        <span>Less</span>
-        <div class="color-box light"></div>
-        <div class="color-box medium"></div>
-        <div class="color-box dark"></div>
-        <span>More</span>
-    </div>
+    <div id="noteModal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Add Note for <span id="noteDate">Date</span></h2>
+          <textarea id="noteInput" rows="5" placeholder="Enter your notes..."></textarea>
+          <button id="saveNote">Save Note</button>
+      </div>
+  </div>
     <script src="script.js"></script>
 </body>
 </html>

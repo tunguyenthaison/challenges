@@ -9,6 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load or initialize check-ins
     const checkIns = JSON.parse(localStorage.getItem('checkIns')) || {};
 
+    document.addEventListener('DOMContentLoaded', function() {
+        const noteModal = document.getElementById('noteModal');
+        const noteInput = document.getElementById('noteInput');
+        const noteDateLabel = document.getElementById('noteDate');
+        let selectedDay;
+
     function createDaysGrid() {
         // Create empty squares for days of previous month
         for (let i = 0; i < firstDayOfMonth; i++) {
@@ -53,6 +59,57 @@ document.addEventListener('DOMContentLoaded', function() {
                 const dayElement = days[day + firstDayOfMonth - 1];
                 dayElement.classList.add('checked');
             }
+            function showNoteModal(dayElement) {
+                selectedDay = dayElement;
+                const date = dayElement.getAttribute('data-date');
+                noteDateLabel.textContent = date;
+                noteInput.value = checkIns[date] || '';
+                noteModal.style.display = 'block';
+            }
+        
+            function closeNoteModal() {
+                noteModal.style.display = 'none';
+            }
+        
+            document.getElementsByClassName('close')[0].onclick = closeNoteModal;
+            window.onclick = function(event) {
+                if (event.target === noteModal) {
+                    closeNoteModal();
+                }
+            }
+        
+            document.getElementById('saveNote').onclick = function() {
+                const date = selectedDay.getAttribute('data-date');
+                const note = noteInput.value.trim();
+                checkIns[date] = note;
+                localStorage.setItem('checkIns', JSON.stringify(checkIns));
+                updateDaysGrid();
+                closeNoteModal();
+            };
+        
+            function updateDaysGrid() {
+                // ... rest of your previous updateDaysGrid function
+        
+                // Update color based on note length
+                Object.keys(checkIns).forEach(date => {
+                    const dayIndex = parseInt(date.split('-')[2]);
+                    const dayElement = daysGrid.querySelector(`[data-day="${dayIndex}"]`);
+                    const noteLength = checkIns[date].length;
+        
+                    // Remove all color classes
+                    dayElement.classList.remove('light', 'medium', 'dark');
+        
+                    // Add color class based on note length
+                    if (noteLength > 100) {
+                        dayElement.classList.add('dark');
+                    } else if (noteLength > 40) {
+                        dayElement.classList.add('medium');
+                    } else if (noteLength > 0) {
+                        dayElement.classList.add('light');
+                    }
+                });
+            }
+        });
         });
     }
 

@@ -29,7 +29,7 @@ Done?         |                    |                     |                   |  
 
 
 ### How to use:
-- Fill in `&#10007;` for &#10007; or just leaving empty <br>
+- Fill in `&#x2718;` for &#x2718; or just leaving empty <br>
   This means the task did not get done on that day.
 - Fill in `:heavy_check_mark:` for :heavy_check_mark: <br>
   This means the task gets done on that day, moderately.

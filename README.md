@@ -13,6 +13,7 @@ Done?         | :heavy_check_mark: |  :white_check_mark: | :heavy_check_mark:| :
 How to use:
 - Fill in `:heavy_check_mark:` for :heavy_check_mark:
 - Fill in `:white_check_mark:` for :white_check_mark:
+- Fill in `☑️:` for ☑️:
 
 ## Notes
 Source: [Emoji for Github](https://gist.github.com/rxaviers/7360908)

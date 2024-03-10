@@ -1,6 +1,6 @@
 # Reading challenges
 
-Day #         | Done?              | PostgreSQL      | SQLite
+Day #         | 01              | 02     |  03
 :------------ | :-------------     | :-------------| :-------------
-substr        | :heavy_check_mark: |  :white_check_mark: | :heavy_check_mark:
+Done?        | :heavy_check_mark: |  :white_check_mark: | :heavy_check_mark:
 

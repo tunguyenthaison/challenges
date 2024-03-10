@@ -3,13 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Check-In Habit Tracker</title>
+    <title>Monthly Check-In Habit Tracker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Check-In Habit </h1>
-    <div id="tracker"></div>
-    <button onclick="checkIn()">Check-In Today</button>
+    <div id="tracker">
+        <div id="month">March 2024</div>
+        <div class="weekdays">
+            <span>Sun</span>
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+        </div>
+        <div id="days-grid"></div>
+    </div>
+    <div class="legend">
+        <span>Less</span>
+        <div class="color-box light"></div>
+        <div class="color-box medium"></div>
+        <div class="color-box dark"></div>
+        <span>More</span>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

@@ -7,17 +7,50 @@ body {
 }
 
 #tracker {
+  display: flex;
+  flex-direction: column;
+}
+
+.weekdays span {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+}
+
+#days-grid {
   display: grid;
-  grid-template-columns: repeat(7, 20px);
-  gap: 5px;
+  grid-template-columns: repeat(7, 20px); /* 7 days a week */
+  gap: 2px;
 }
 
 .day {
   width: 20px;
   height: 20px;
-  background-color: #e0e0e0;
+  background-color: #ebedf0;
+  border-radius: 3px;
 }
 
-.checked {
-  background-color: #76a9fa;
+.legend {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.color-box {
+  width: 20px;
+  height: 20px;
+  margin: 0 2px;
+  border-radius: 3px;
+}
+
+.light {
+  background-color: #9be9a8;
+}
+
+.medium {
+  background-color: #40c463;
+}
+
+.dark {
+  background-color: #30a14e;
 }

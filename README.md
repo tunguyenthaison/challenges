@@ -11,9 +11,13 @@ Day           | 25                 | 26                  |  27               |  
 Done?         | :heavy_check_mark: |  :white_check_mark: | :heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:|
 
 How to use:
-- Fill in `:heavy_check_mark:` for :heavy_check_mark:
-- Fill in `:white_check_mark:` for :white_check_mark:
-- Fill in `&#10007;` for &#10007;
+- Fill in `&#10007;` for &#10007; or just leaving empty <br>
+  This means the task did not get done on that day.
+- Fill in `:heavy_check_mark:` for :heavy_check_mark: <br>
+  This means the task gets done on that day, moderately.
+- Fill in `:white_check_mark:` for :white_check_mark:<br>
+  This means the task gets done on that day _super well_!
+
 
 ## Notes
 Source: [Emoji for Github](https://gist.github.com/rxaviers/7360908)

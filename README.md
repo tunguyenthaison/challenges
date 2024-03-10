@@ -9,3 +9,6 @@ Day           | 17                 | 18                  |  19               |  
 Done?         | :heavy_check_mark: |  :white_check_mark: | :heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:|
 Day           | 25                 | 26                  |  27               |  28               |  29               |  30               |  31               |  32               |
 Done?         | :heavy_check_mark: |  :white_check_mark: | :heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:|
+
+How to use:
+- Fill in `:heavy_check_mark:` for :heavy_check_mark:

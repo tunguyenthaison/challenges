@@ -3,7 +3,7 @@
 ## About
 This is a repo for 30-day challenges on many different tasks. Some ideas:
 
-1. Getting at least 4 sessions of Pomodoro every day, total focus, no distraction. 
+1. Getting at least 4 sessions of Pomodoro every day, total focus, no distraction. <br>
     [pomodoro challenge](pomodoro.md)
 2. Reading a book at least 10 minutes a day!
 3. Exercise, yoga, push-ups, walking, ... at least 10 minutes or 4 minutes a day. 
